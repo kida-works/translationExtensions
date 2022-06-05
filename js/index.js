@@ -8,10 +8,12 @@ window.onload = () => {
     // console.log(dom)
     if (text.length > 0) {
       let newDiv = document.createElement("div");
-      const newContent = document.createTextNode(text);
+      newDiv.id = "translationElement";
+      const newContent = document.createTextNode(textData);
       newDiv.appendChild(newContent);
       const currentDiv = document.getElementById("translationElement");
       document.body.insertBefore(newDiv, currentDiv);
+
       // API通信
       // const apiUrl = `https://api-free.deepl.com/v2/translate?auth_key=bf60a7c4-0d0f-1d71-da7a-ffcad5fb8b6c:fx&text=${text}&target_lang=JA`;
       // async function postData(url, data = {}) {
@@ -35,11 +37,15 @@ window.onload = () => {
       //   return response.json(); // JSON のレスポンスをネイティブの JavaScript オブジェクトに解釈
       // }
       // postData(apiUrl, { answer: 42 }).then((data) => {
-      //   const textData = data.translations[0].text;
-      //   // console.log(data); // `data.json()` の呼び出しで解釈された JSON データ
-      //   window.alert(textData); // `data.json()` の呼び出しで解釈された JSON データ
-      // });
+      //   const textData = data.translations[0].text;// `data.json()` の呼び出しで解釈された JSON データ
 
+      //   let newDiv = document.createElement("div");
+      //   newDiv.id = 'translationElement';
+      //   const newContent = document.createTextNode(textData);
+      //   newDiv.appendChild(newContent);
+      //   const currentDiv = document.getElementById("translationElement");
+      //   document.body.insertBefore(newDiv, currentDiv);
+      // });
     }
   });
 };
