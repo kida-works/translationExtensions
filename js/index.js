@@ -9,10 +9,16 @@ window.onload = () => {
     if (text.length > 0) {
       let newDiv = document.createElement("div");
       newDiv.id = "translationElement";
-      const newContent = document.createTextNode(textData);
+      const newContent = document.createTextNode(text);
       newDiv.appendChild(newContent);
-      const currentDiv = document.getElementById("translationElement");
+      let currentDiv = document.getElementById("translationElement");
       document.body.insertBefore(newDiv, currentDiv);
+      
+      currentDiv = document.getElementById("translationElement");
+      currentDiv.onclick=()=>{
+        currentDiv.style.display="none";
+      }
+
 
       // API通信
       // const apiUrl = `https://api-free.deepl.com/v2/translate?auth_key=bf60a7c4-0d0f-1d71-da7a-ffcad5fb8b6c:fx&text=${text}&target_lang=JA`;
