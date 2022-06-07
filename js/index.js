@@ -29,32 +29,38 @@ window.onload = () => {
       return response.json(); // JSON のレスポンスをネイティブの JavaScript オブジェクトに解釈
     }
 
-    if (text.length > 0) {
-      // let newDiv = document.createElement("div");
-      // newDiv.id = "translationElement";
-      // const newContent = document.createTextNode(text);
-      // newDiv.appendChild(newContent);
-      // let currentDiv = document.getElementById("translationElement");
-      // document.body.insertBefore(newDiv, currentDiv);
-
-      postData(text, { answer: 42 })
-        .then((data) => {
-          const textData = data.translations[0].text; // `data.json()` の呼び出しで解釈された JSON データ
-          let newDiv = document.createElement("div");
-          newDiv.id = "translationElement";
-          const newContent = document.createTextNode(textData);
-          newDiv.appendChild(newContent);
-          const currentDiv = document.getElementById("translationElement");
-          document.body.insertBefore(newDiv, currentDiv);
-        })
-        .then(() => {
-          currentDiv = document.getElementById("translationElement");
-          currentDiv.onclick = () => {
-            currentDiv.style.display = "none";
-          };
-        });
+    if (text.length > 0 && document.getElementById("id") == null) {
+      let newDiv = document.createElement("div");
+      newDiv.id = "translationElement";
+      const newContent = document.createTextNode(text);
+      newDiv.appendChild(newContent);
+      let currentDiv = document.getElementById("translationElement");
+      document.body.insertBefore(newDiv, currentDiv);
+      console.log(document.getElementById("id") == null)
 
       // API通信
+      // postData(text, { answer: 42 })
+      //   .then((data) => {
+      //     const textData = data.translations[0].text; // `data.json()` の呼び出しで解釈された JSON データ
+      //     let newDiv = document.createElement("div");
+      //     newDiv.id = "translationElement";
+      //     const newContent = document.createTextNode(textData);
+      //     newDiv.appendChild(newContent);
+      //     const currentDiv = document.getElementById("translationElement");
+      //     document.body.insertBefore(newDiv, currentDiv);
+          
+      //   })
+      //   .then(() => {
+      //     currentDiv = document.getElementById("translationElement");
+      //     currentDiv.onclick = () => {
+      //       currentDiv.style.display = "none";
+      //     };
+      //   });
+
+      
+    }else if(text.length > 0 && document.getElementById("id") !== null){
+      console.log("test")
     }
+
   });
 };
