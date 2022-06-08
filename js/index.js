@@ -1,5 +1,13 @@
 window.onload = () => {
   const body = document.querySelector("body");
+
+  document.body.addEventListener("keypress", event => {
+    console.log(event.key == "v")
+    console.log(event.shiftKey)
+    // if (event.key == "v" && event.shiftKey == true) {
+    //   console.log("Ctrl+Vが押されました");
+    // }
+  });
   window.addEventListener("mouseup", () => {
     const text = window.getSelection().toString();
     // const selection = window.getSelection();
@@ -34,11 +42,7 @@ window.onload = () => {
     //     alert("Ctrl+Vが押されました");
     //   }
     // });
-    document.body.addEventListener("keydown", (event) => {
-      if (event.key == "v" && event.shiftKey == true) {
-        console.log("Ctrl+Vが押されました");
-      }
-    });
+    
 
     if (text.length > 0 && document.getElementById("id") !== null) {
       // let newDiv = document.createElement("div");
