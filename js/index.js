@@ -29,14 +29,25 @@ window.onload = () => {
       return response.json(); // JSON のレスポンスをネイティブの JavaScript オブジェクトに解釈
     }
 
-    if (text.length > 0 && document.getElementById("id") == null) {
-      let newDiv = document.createElement("div");
-      newDiv.id = "translationElement";
-      const newContent = document.createTextNode(text);
-      newDiv.appendChild(newContent);
-      let currentDiv = document.getElementById("translationElement");
-      document.body.insertBefore(newDiv, currentDiv);
-      console.log(document.getElementById("id") == null)
+    // document.body.addEventListener("keypress", (event) => {
+    //   if (event.shiftKey == true) {
+    //     alert("Ctrl+Vが押されました");
+    //   }
+    // });
+    document.body.addEventListener("keydown", (event) => {
+      if (event.key == "v" && event.shiftKey == true) {
+        console.log("Ctrl+Vが押されました");
+      }
+    });
+
+    if (text.length > 0 && document.getElementById("id") !== null) {
+      // let newDiv = document.createElement("div");
+      // newDiv.id = "translationElement";
+      // const newContent = document.createTextNode(text);
+      // newDiv.appendChild(newContent);
+      // let currentDiv = document.getElementById("translationElement");
+      // document.body.insertBefore(newDiv, currentDiv);
+      console.log(document.getElementById("id") == null);
 
       // API通信
       // postData(text, { answer: 42 })
@@ -48,7 +59,7 @@ window.onload = () => {
       //     newDiv.appendChild(newContent);
       //     const currentDiv = document.getElementById("translationElement");
       //     document.body.insertBefore(newDiv, currentDiv);
-          
+
       //   })
       //   .then(() => {
       //     currentDiv = document.getElementById("translationElement");
@@ -56,11 +67,8 @@ window.onload = () => {
       //       currentDiv.style.display = "none";
       //     };
       //   });
-
-      
-    }else if(text.length > 0 && document.getElementById("id") !== null){
-      console.log("test")
+    } else if (text.length > 0 && document.getElementById("id") === null) {
+      console.log("test");
     }
-
   });
 };
