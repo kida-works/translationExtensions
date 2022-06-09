@@ -43,7 +43,23 @@ window.onload = () => {
           .then(() => {
             const translationElement =
               document.getElementById("translationElement");
-              
+
+            Object.assign(translationElement.style, {
+              display: "block",
+              backgroundColor: "#fff",
+              fontSize: "16px",
+              color: "rgb(26, 26, 26)",
+              position: "fixed",
+              top: 0,
+              right: 0,
+              left: 0,
+              zIndex: 10000,
+              width: "50%",
+              margin: "0 auto",
+              padding: "20px",
+              borderRadius: "4px",
+              boxShadow: "5px 5px 12px 0 rgba(0, 0, 0, 0.4)",
+            });
             translationElement.addEventListener("click", (e) => {
               translationElement.style.display = "none";
             });

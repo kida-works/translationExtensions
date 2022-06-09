@@ -1,6 +1,6 @@
 #translationElement {
-  display: inline-block;
-  background-color: #fff;
+  display: block;
+  background-color: rgb(26, 26, 26);
   position: fixed;
   top: 0;
   right: 0;
