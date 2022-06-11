@@ -1,0 +1,8 @@
+{
+  "manifest_version": 2,
+  "name": "E-Translation",
+  "short_name": "E-T",
+  "version": "1.0.0",
+  "default_locale": "ja_JP",
+  "description": "DeepLを使った英語から日本語に翻訳してくれる拡張機能です。"
+}
